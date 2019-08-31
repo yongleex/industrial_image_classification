@@ -196,7 +196,7 @@ def train_net():
 
 
 def main():
-    for i in range(0, 5):
+    for i in range(5):
         preprocess()
         model = train_net()
         torch.save(model, "../data/models/ResNet_%2d.pt" % (i + 1))

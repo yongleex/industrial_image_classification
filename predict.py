@@ -30,7 +30,7 @@ batch_size = 16  # Batch size for training (change depending on how much memory 
 num_epochs = 20  # Number of epochs to train for
 input_size = 448
 
-data_dir = "../data/train_images"
+data_dir = "../data/test_images"
 new_result_path = "../data/new_raw_result.csv"
 
 # 得到设备运行环境
@@ -48,8 +48,8 @@ data_transforms = {
     'val': transforms.Compose([
         transforms.Resize(input_size),
         transforms.CenterCrop(input_size),
-        transforms.ToTensor()  # ,
-        # transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+        transforms.ToTensor(),
+        transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
     ]),
 }
 
